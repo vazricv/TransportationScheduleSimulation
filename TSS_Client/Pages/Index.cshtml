@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Transportation Schedule";
+}
+@using TSS_Data.Models
+
+<script src="~/js/AutoRefresh.js"></script>
+
+<div class="text-center">
+	<h2 class="display-4">Welcome To Transportation Schedule Simulation</h2>
+	<p>Live Public Transportation Schedule.</p>
+</div>
+
+@foreach (StopStation sItem in Model.stops)
+{
+	<div class="stop container w-auto ">
+		<h5 class="row border-bottom border-info">@sItem.Name</h5>
+		@foreach (RouteSchedule sch in sItem.RouteSchedules)
+		{
+			<div class="route row card-header">
+				<div class="routeName col-auto border-right font-weight-bold">@sch.TheRouteName</div>
+				@for (int i = 0; i < sch.Schedules.Count; i++)
+				{
+					if (sch.Schedules[i] == 0)
+					{
+						<div class="arivalMin col-auto @(i == sch.Schedules.Count - 1 ? "border-right" : "And")"> Right Now</div>
+					}
+					else
+					{
+						<div class="arivalMin col-auto @(i == sch.Schedules.Count - 1 ? "border-right" : "And")">in @sch.Schedules[i] Minutes</div>
+					}
+
+				}
+			</div>
+		}
+	</div>
+}

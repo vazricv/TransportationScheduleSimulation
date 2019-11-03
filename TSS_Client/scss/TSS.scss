@@ -1,0 +1,23 @@
+﻿$StopTitleColor: darkblue;
+
+.And {
+	margin-right: -10px;
+
+	&:After {
+		content: "  And";
+		margin-left: 10px;
+	}
+}
+
+.routeName, .arivalMin {
+	padding-left: 10px;
+}
+
+.stop {
+	padding-bottom: 15px;
+
+	h5 {
+		color: $StopTitleColor;
+		margin-bottom: 3px;
+	}
+}

@@ -1,0 +1,14 @@
+.And {
+  margin-right: -10px; }
+  .And:After {
+    content: "  And";
+    margin-left: 10px; }
+
+.routeName, .arivalMin {
+  padding-left: 10px; }
+
+.stop {
+  padding-bottom: 15px; }
+  .stop h5 {
+    color: darkblue;
+    margin-bottom: 3px; }
